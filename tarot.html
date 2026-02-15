@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vortex Tarot</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: 'Helvetica Neue', Arial, sans-serif;
+            background-color: #000000;
+            color: #ffffff;
+            overflow-x: hidden;
+        }
+
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 5%;
+            border-bottom: 1px solid #222;
+            background: #000000;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        .logo {
+            font-weight: 900;
+            font-size: 24px;
+            color: #ffc0cb;
+            letter-spacing: 4px;
+        }
+
+        .nav-links {
+            display: flex;
+            align-items: center;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: #ffffff;
+            margin-left: 30px;
+            font-size: 13px;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            font-weight: 600;
+            transition: 0.3s;
+        }
+
+        .nav-links a:hover {
+            color: #ffc0cb;
+        }
+
+        /* Styled Oracle button in nav */
+        .oracle-btn {
+            border: 2px solid #ffc0cb !important;
+            padding: 8px 15px;
+            color: #ffc0cb !important;
+            transition: 0.3s;
+        }
+
+        .oracle-btn:hover {
+            background-color: #ffc0cb;
+            color: #000000 !important;
+        }
+
+        .hamburger {
+            display: none;
+            flex-direction: column;
+            cursor: pointer;
+            gap: 5px;
+        }
+
+        .hamburger div {
+            width: 25px;
+            height: 2px;
+            background-color: #ffc0cb;
+        }
+
+        .hero {
+            display: flex;
+            flex-wrap: wrap;
+            min-height: 100vh;
+        }
+
+        .content-left {
+            flex: 1;
+            min-width: 50%;
+            padding: 80px 5%;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            box-sizing: border-box;
+        }
+
+        .content-right {
+            flex: 1;
+            min-width: 50%;
+            background-color: #ffc0cb;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 60px 0;
+            box-sizing: border-box;
+        }
+
+        .title {
+            font-size: clamp(40px, 6vw, 80px);
+            color: #ffc0cb;
+            margin: 0 0 20px 0;
+            line-height: 1;
+            font-weight: 900;
+            text-transform: uppercase;
+        }
+
+        .subtitle {
+            font-size: 18px;
+            color: #888;
+            margin-bottom: 40px;
+            max-width: 480px;
+            line-height: 1.6;
+        }
+
+        .cta-button {
+            background-color: #ffc0cb;
+            color: #000000;
+            border: none;
+            padding: 18px 45px;
+            font-weight: 900;
+            font-size: 14px;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+
+        .cta-button:hover {
+            background-color: #ffffff;
+        }
+
+        .card {
+            width: 280px;
+            height: 440px;
+            background-color: #000000;
+            border: 3px solid #ffffff;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 70px;
+            box-shadow: 25px 25px 0px #000000;
+            transition: 0.4s;
+        }
+
+        .card:hover {
+            transform: translateY(-10px);
+            box-shadow: 30px 30px 0px rgba(0,0,0,0.2);
+        }
+
+        @media (max-width: 768px) {
+            .hamburger { display: flex; }
+            
+            .nav-links {
+                display: none; /* Hidden by default on mobile */
+                position: absolute;
+                top: 100%;
+                left: 0;
+                width: 100%;
+                background-color: #000000;
+                flex-direction: column;
+                padding: 20px 0;
+                border-bottom: 1px solid #222;
+            }
+
+            .nav-links.active {
+                display: flex; /* Show when JS toggles 'active' */
+            }
+
+            .nav-links a { 
+                margin: 15px 0; 
+                margin-left: 0; 
+                font-size: 16px;
+            }
+            
+            .hero { flex-direction: column; }
+            .content-left { text-align: center; align-items: center; padding: 60px 5%; }
+            .content-right { min-height: 400px; }
+            .card { width: 220px; height: 350px; }
+        }
+    </style>
+</head>
+<body>
+
+    <nav class="navbar">
+        <div class="logo">VORTEX</div>
+        <div class="hamburger" id="hamburger">
+            <div></div>
+            <div></div>
+            <div></div>
+        </div>
+        <div class="nav-links" id="nav-links">
+            <a href="tarot.html">Home</a>
+            <a href="oracle.html" >Oracle</a>
+            <a href="journey.html">Journey</a>
+            <a href="about.html">About</a>
+        </div>
+    </nav>
+
+    <main class="hero">
+        <div class="content-left">
+            <h1 class="title">Reveal Your<br>Destiny.</h1>
+            <p class="subtitle">Enter the pink void. A high-contrast, minimal tarot experience designed to illuminate the path forward.</p>
+            <a href="reading.html">
+                <button class="cta-button">DRAW A CARD</button>
+            </a>
+        </div>
+        <div class="content-right">
+            <div class="card">✦</div>
+        </div>
+    </main>
+
+    <script>
+        const hamburger = document.getElementById('hamburger');
+        const navLinks = document.getElementById('nav-links');
+
+        hamburger.addEventListener('click', () => {
+            navLinks.classList.toggle('active');
+        });
+    </script>
+</body>
+</html>

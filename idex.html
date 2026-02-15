@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Our E-Commerce Team</title>
+    <link rel="stylesheet" href="e-commerce.css">
+</head>
+<body>
+    <style>
+        body {
+    background: url(HD-wallpaper-programming-language-web-development-code-programming-computer-blue-blue-background-blurred-glowing-code-programmer.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    margin: 0;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: 'Consolas', 'Courier New', monospace; /* Programmer font */
+    color: white;
+    overflow: hidden;
+}
+
+@keyframes float {
+    0% { transform: translateY(0px); }
+    50% { transform: translateY(-15px); }
+    100% { transform: translateY(0px); }
+}
+
+@keyframes glow {
+    from { text-shadow: 0 0 5px #39FF14, 0 0 10px #00D4FF; }
+    to { text-shadow: 0 0 10px #00D4FF, 0 0 20px #39FF14; }
+}
+
+.container {
+    background: rgba(0, 212, 255, 0.05); /* Light blue tint */
+    backdrop-filter: blur(15px);
+    padding: 40px;
+    border-radius: 20px;
+    border: 1px solid rgba(57, 255, 20, 0.3); /* Neon green border */
+    text-align: center;
+    width: 35%; 
+    max-width: 900px;
+    box-shadow: 0 0 30px rgba(0, 212, 255, 0.2);
+    animation: float 5s ease-in-out infinite;
+}
+
+.image-container img {
+    width: 100%;
+    max-width: 320px;
+    height: auto;
+    border-radius: 12px;
+    margin-bottom: 20px;
+    border: 3px solid #00D4FF; /* Blue border for image */
+    box-shadow: 0 0 15px #00D4FF;
+    transition: transform 0.5s ease;
+}
+
+.image-container img:hover {
+    transform: scale(1.05);
+}
+
+h1 {
+    color: #39FF14; /* Neon Green */
+    animation: glow 2s ease-in-out infinite alternate;
+}
+
+h3 {
+    color: #00D4FF; /* Light Blue */
+}
+
+#member-list {
+    display: flex;
+    flex-direction: row; 
+    flex-wrap: wrap;   
+    justify-content: center; 
+    gap: 12px;         
+    margin-top: 15px;
+}
+
+#member-list span {
+    background: rgba(57, 255, 20, 0.1); 
+    padding: 8px 15px;
+    border-radius: 8px;
+    font-size: 0.9rem;
+    border: 1px solid #39FF14;
+    color: #39FF14;
+    transition: 0.3s;
+}
+
+#member-list span:hover {
+    background: #39FF14;
+    color: black;
+    box-shadow: 0 0 10px #39FF14;
+}
+
+.btn {
+    margin-top: 35px;
+    padding: 15px 40px;
+    background-color: transparent;
+    color: #00D4FF;
+    border: 2px solid #00D4FF;
+    border-radius: 8px;
+    font-size: 1.1rem;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.btn:hover {
+    background-color: #00D4FF;
+    color: black;
+    box-shadow: 0 0 20px #00D4FF;
+    transform: scale(1.1);
+}
+
+.btn-link {
+    text-decoration: none;
+}
+    </style>
+    <div class="container">
+        <h1>Meet the Creators</h1>
+        
+        <div class="image-container">
+            <img src="photo_2026-02-13_20-12-37.jpg" alt="Our Project Team" id="team-img">
+        </div>
+
+        <div class="team-info">
+            <h3>Team Members:</h3>
+            <div id="member-list">
+                <span>Soe Thiha Zaw</span>
+                <span>Nyein Chan Aung</span>
+                <span>Aung Nay Thit</span>
+                <span>Yin Yin Aye</span>
+                <span>Phoe Phoe Hlaing</span>
+                <span>May Htet Kyaw</span>
+            </div>
+        </div>
+
+        <a href="tarot.html" class="btn-link">
+            <button class="btn">Enter Project</button>
+        </a>
+    </div>
+
+</body>
+</html>
